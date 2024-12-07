@@ -86,6 +86,28 @@ body {
     }
 }
 
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 header {
     background-color: var(--main-section);
     color: var(--main-bg);
@@ -200,10 +222,16 @@ footer {
     display: flex;
     gap: 1rem;
     padding-left: 2rem;  /* Added padding to the left */
+    opacity: 0;
+    animation: slideFromLeft 0.5s ease-out forwards;
+    animation-delay: 0.3s;
 }
 
 .nav-right {
     margin-left: auto;
+    opacity: 0;
+    animation: slideFromRight 0.5s ease-out forwards;
+    animation-delay: 0.3s;
 }
 .button {
     margin-left: auto;
@@ -351,9 +379,13 @@ footer {
 @media screen and (max-width: 784px) {
     .nav-left {
         display: none;
+        animation: none;
+        opacity: 1;
     }
     .nav-right {
         display: none;
+        animation: none;
+        opacity: 1;
     }   
     .menu-icon {
         display: block;
