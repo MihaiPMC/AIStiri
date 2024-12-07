@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --main-bg: #ffffff; /* White background */
+    --main-text: #003366; /* Black text */
+    --main-section: #003366; /* Dark blue */
+    --complementary-section: #6699cc; /* Light blue */
+    --main-highlight: #336699; /* Medium blue */
+    --complementary-highlight: #99ccff; /* Very light blue */
+    --main-button: #0055cc; /* Bright blue */
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--main-text);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 2rem;
+    font-size: 2.5rem;  /* Added this line to make the logo bigger */
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tagline {
+    color: var(--complementary-highlight);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    margin-top: -0.5rem;
+    border-right: 2px solid var(--complementary-highlight);
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--complementary-highlight) }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+header {
+    background-color: var(--main-section);
+    color: var(--main-bg);
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav a {
+    color: var(--main-bg);
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+#news-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+section {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--complementary-section);
+    padding: 1rem;
+    border-radius: 8px;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+article {
+    background-color: var(--main-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Add staggered delay for articles */
+article:nth-child(1) { animation-delay: 0.2s; }
+article:nth-child(2) { animation-delay: 0.4s; }
+article:nth-child(3) { animation-delay: 0.6s; }
+article:nth-child(4) { animation-delay: 0.8s; }
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: var(--main-section);
+    color: var(--main-bg);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+
+.important-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fact-score {
+    height: auto;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: var(--main-highlight);
+    color: var(--main-bg);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+.signup {
+    margin-left: auto;
+    display: block;
+    background:  #6699cc;
+    color: white;
+    padding: 8px 30px;
+    border-radius: 4px;
+    transition: background-color 0.5s, color 0.5s;
+    cursor: pointer;
+    position: relative;
+}
+
+.signup:hover {
+    background: #336699;
+    color: #ffffff;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+.nav-left {
+    display: flex;
+    gap: 1rem;
+    padding-left: 2rem;  /* Added padding to the left */
+}
+
+.nav-right {
+    margin-left: auto;
+}
+.button {
+    margin-left: auto;
+    display: block;
+    background:  #6699cc;
+    color: white;
+    padding: 8px 30px;
+    border-radius: 4px;
+    transition: background-color 0.5s, color 0.5s;
+    position: relative;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #336699;
+    color: #ffffff;
+}
+.menu-icon {
+    width: 28px;
+    margin-left: auto;
+    display: none;
+}
+#MenuItems {
+    position: fixed;
+    right: -80%;  /* Start off-screen */
+    top: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--main-section);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+    justify-content: center;  /* Add this to center content vertically */
+    padding: 2rem;  /* Adjust padding */
+}
+
+#MenuItems.active {
+    right: 0;
+    transform: translateX(0);
+}
+
+#MenuItems ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#MenuItems.active ul {
+    opacity: 1;
+}
+
+#MenuItems li {
+    list-style: none;
+}
+
+#MenuItems a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 1rem;
+    transition: background-color 0.3s;
+}
+
+#MenuItems a:hover {
+    background-color: var(--main-highlight);
+}
+
+#MenuItems.active li {
+    opacity: 0;
+}
+
+#MenuItems.active li:nth-child(1) { animation-delay: 0.2s; }
+#MenuItems.active li:nth-child(2) { animation-delay: 0.3s; }
+#MenuItems.active li:nth-child(3) { animation-delay: 0.4s; }
+
+.back-icon {
+    position: fixed;  /* Change from absolute to fixed */
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;  /* Ensure it's above other elements */
+    transition: all 0.3s ease;
+}
+
+.back-icon:hover {
+    color: var(--complementary-highlight);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: none;
+    z-index: 999;
+}
+
+#overlay.active {
+    display: block;
+}
+
+.mobile-logo {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    color: white;
+}
+
+.mobile-tagline {
+    color: var(--complementary-highlight);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--complementary-highlight);
+    animation: 
+        typing 3.5s steps(40, end) 0.8s forwards,
+        blink-caret .75s step-end infinite;
+    width: 0;
+}
+
+#MenuItems.active .mobile-header {
+    opacity: 1;
+}
+
+@media screen and (max-width: 784px) {
+    .nav-left {
+        display: none;
+    }
+    .nav-right {
+        display: none;
+    }   
+    .menu-icon {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    #MenuItems {
+        display: block;
+    }
+    .tagline {
+        display: none;
+    }
+    .mobile-tagline {
+        display: block;
+    }
+    
+    #MenuItems ul {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease-out forwards;
+        animation-delay: 0.4s;
+    }
+    
+    #MenuItems.active ul {
+        opacity: 1;
+    }
+}
+
+.mobile-header {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 0.2s;
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-header.animate {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+#MenuItems ul.animate {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+#MenuItems li.animate {
+    animation: slideIn 0.5s ease-out forwards;
+}
