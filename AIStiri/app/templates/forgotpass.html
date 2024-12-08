@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resetare Parolă - AIStiri</title>
+    <link rel="stylesheet" href="../static/css/index-style.css">
+    <link rel="stylesheet" href="../static/css/forgotpass-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="../static/js/forgotpass.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Add your EmailJS public key here
+        })();
+    </script>
+</head>
+<body>
+    <div class="split-container">
+        <div class="logo-side">
+            <a href="index.html" class="logo-link">
+                <h1>AIȘtiri</h1>
+            </a>
+            <p>Informația corectă la un click distanță</p>
+        </div>
+        <div class="forgotpass-side">
+            <div class="forgotpass-box">
+                <h2>Resetare Parolă</h2>
+                <p class="instructions">Introdu adresa de email pentru a primi instrucțiunile de resetare a parolei.</p>
+                <form id="forgotPassForm">
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="links">
+                        <a href="login.html">Înapoi la autentificare</a>
+                    </div>
+                    <button type="submit">Trimite Email</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

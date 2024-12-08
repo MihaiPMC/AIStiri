@@ -1,0 +1,249 @@
+/* Base styles */
+.split-container {
+    display: flex;
+    min-height: 100vh;
+    background: var(--main-bg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo-side {
+    flex: 1;
+    background: linear-gradient(135deg, var(--main-section), var(--main-highlight));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: white;
+}
+
+.logo-side h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo-side p {
+    color: var(--complementary-highlight);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 400px;
+    border-right: 2px solid var(--complementary-highlight);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--complementary-highlight) }
+}
+
+.signup-side {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: white;
+}
+
+.signup-box {
+    width: 100%;
+    padding: 2rem;
+    background: var(--complementary-section);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.signup-box h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2.5rem;  /* Increased to accommodate label above */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 2px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-bottom-color: white;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    top: -20px;  /* Position above the input */
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;  /* Smaller font size */
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.password-wrapper input:focus ~ label,
+.password-wrapper input:valid ~ label {
+    top: -20px;
+    font-size: 0.75rem;
+    color: white;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding: 12px 2px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    outline: none;
+    padding-right: 35px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 2;
+}
+
+.toggle-password:hover {
+    color: white;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    padding: 0 4px;
+}
+
+.links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s;
+}
+
+.links a:hover {
+    color: white;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    background: var(--main-highlight);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background: var(--main-section);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Rest of the styles same as login-style.css */
+/* ...existing code... */
+
+.logo-link {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logo-link h1 {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo-link:hover h1 {
+    transform: scale(1.05);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ...existing code... */
+
+#confirmPassword {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+    }
+    
+    .logo-side {
+        padding: 3rem 1rem;
+    }
+    
+    .signup-side {
+        width: 100%;
+    }
+    
+    .signup-box {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

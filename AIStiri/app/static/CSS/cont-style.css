@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --main-bg: #ffffff;
+    --main-text: #003366;
+    --main-section: #003366;
+    --complementary-section: #6699cc;
+    --main-highlight: #336699;
+    --complementary-highlight: #99ccff;
+}
+
+/* Import existing header and footer styles */
+@import 'index-style.css';
+
+.account-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.profile-section, .activity-section {
+    background-color: var(--complementary-section);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profile-avatar i {
+    font-size: 4rem;
+    color: white;
+}
+
+.profile-details {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-group label {
+    font-weight: 600;
+    color: var(--complementary-highlight);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: var(--main-highlight);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--main-highlight);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.activity-item i {
+    font-size: 1.5rem;
+    color: var(--complementary-highlight);
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-date {
+    font-size: 0.875rem;
+    color: var(--complementary-highlight);
+}
+
+@media screen and (max-width: 784px) {
+    .account-container {
+        margin: 1rem;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-group {
+        text-align: center;
+    }
+
+    .tags {
+        justify-content: center;
+    }
+}
